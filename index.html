@@ -83,7 +83,7 @@
             background-color: #787878;
         }
         /* nav */
-        .nav{
+        /* .nav{
 
         }
         .nav > ul{
@@ -122,6 +122,43 @@
         }
         .nav > ul > li >  ul > li > a:hover{
             background-color: #fff;
+        } */
+        .nav{}
+        .nav > ul{
+            display:flex;
+            justify-content:right;
+            margin-top:30px;
+        }
+        .nav > ul > li{
+            position:relative;
+        }
+        .nav > ul > li > a{
+            display: inline-block;
+            padding:10px 50px;
+            background-color: #fff;
+        }
+        .nav > ul > li > a:hover{
+            background-color: #bdbdbd;
+        }
+        .nav > ul > li > ul{
+            position:absolute;
+            top: 40px;
+            left:0;
+            text-align:center;
+            width:100%;
+            background-color: #cacaca;
+        }
+        .nav > ul > li > ul > li{
+            /* display: none; */
+        }
+        .nav > ul > li > ul > li > a{
+            box-sizing: border-box;
+            display: inline-block;
+            padding:10px;
+            width:100%;
+        }
+        .nav > ul > li > ul > li > a:hover{
+            background-color: #767676;
         }
     </style>
 </head>
@@ -190,6 +227,14 @@
     <!--/wrap-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
+        // $(function(){
+        //     $(".nav > ul > li").mouseover(function(){
+        //         $(this).find(".submenu").stop().slideDown();
+        //     });
+        //     $(".nav > ul > li").mouseout(function(){
+        //         $(this).find(".submenu").stop().slideUp();
+        //     });
+        // });
         $(function(){
             $(".nav > ul > li").mouseover(function(){
                 $(this).find(".submenu").stop().slideDown();
