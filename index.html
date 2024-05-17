@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>just쇼핑몰</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style:none;
+        }
+        a{
+            text-decoration: none;
+            color:#333;
+        }
+        #wrap{
+            width:1200px;
+            margin:0 auto;
+        }
+        #header{
+            display:flex;
+            width:100%;
+            height: 100px;
+            background-color: #959595;
+        }
+        #header .logo{
+            width:20%;
+            height: 100px;
+            background-color: #fff;
+        }
+        #header .nav{
+            width:80%;
+            height: 100px;
+            background-color: #777777;
+        }
+        #slider{
+            width:100%;
+            height:300px;
+            background-color: #9e9e9e;
+        }
+        #contents{
+            display: flex;
+            width:100%;
+            height: 200px;
+            background-color: #848484;
+        }
+        #contents .content1{
+            width:33.3333%;
+            height: 200px;
+            background-color: #595959;
+        }
+        #contents .content2{
+            width:33.3333%;
+            height: 200px;
+            background-color: #ffffff;
+        }
+        #contents .content3{
+            width:33.3333%;
+            height: 200px;
+            background-color: #595959;
+        }
+        #footer{
+            display: flex;
+            width:100%;
+            height:100px;
+        }
+        #footer .footer1{
+            width:20%;
+            height: 100px;
+            background-color: #8c8c8c;
+        }
+        #footer .footer2{
+            width:80%;
+            height: 100px;
+            background-color: #616161;
+        }
+        #footer .footer3{
+            width:20%;
+            height: 100px;
+            background-color: #787878;
+        }
+        /* nav */
+        /* .nav{
+
+        }
+        .nav > ul{
+            display: flex;
+            justify-content: right;
+            margin-top:30px;
+        }
+        .nav > ul > li{
+            position:relative;
+        }
+        .nav > ul > li > a{
+            display: inline-block;
+            padding:10px 50px;
+            background-color: #fff;
+        }
+        .nav > ul > li > a:hover{
+            background-color: #707070;
+        }
+        .nav > ul > li > ul{
+            position:absolute;
+            top:38.5px;
+            left:0;
+            background-color: #a7a7a7;
+            width:100%;
+            text-align: center;
+        }
+        .nav > ul > li > ul > li{
+
+        }
+        .nav > ul > li >  ul > li > a{
+            display: inline-block;
+            padding:10px;
+            background-color: #616161;
+            width:100%;
+            box-sizing: border-box;
+        }
+        .nav > ul > li >  ul > li > a:hover{
+            background-color: #fff;
+        } */
+        .nav{}
+        .nav > ul{
+            display:flex;
+            justify-content:right;
+            margin-top:30px;
+        }
+        .nav > ul > li{
+            position:relative;
+        }
+        .nav > ul > li > a{
+            display: inline-block;
+            padding:10px 50px;
+            background-color: #fff;
+        }
+        .nav > ul > li > a:hover{
+            background-color: #bdbdbd;
+        }
+        .nav > ul > li > ul{
+            position:absolute;
+            top: 40px;
+            left:0;
+            text-align:center;
+            width:100%;
+            background-color: #cacaca;
+        }
+        .nav > ul > li > ul > li{
+            /* display: none; */
+        }
+        .nav > ul > li > ul > li > a{
+            box-sizing: border-box;
+            display: inline-block;
+            padding:10px;
+            width:100%;
+        }
+        .nav > ul > li > ul > li > a:hover{
+            background-color: #767676;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo"></div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">메뉴1</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴1</a></li>
+                            <li><a href="#">서브메뉴2</a></li>
+                            <li><a href="#">서브메뉴3</a></li>
+                            <li><a href="#">서브메뉴4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴2</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴1</a></li>
+                            <li><a href="#">서브메뉴2</a></li>
+                            <li><a href="#">서브메뉴3</a></li>
+                            <li><a href="#">서브메뉴4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴3</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴1</a></li>
+                            <li><a href="#">서브메뉴2</a></li>
+                            <li><a href="#">서브메뉴3</a></li>
+                            <li><a href="#">서브메뉴4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                    <a href="#">메뉴4</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴1</a></li>
+                            <li><a href="#">서브메뉴2</a></li>
+                            <li><a href="#">서브메뉴3</a></li>
+                            <li><a href="#">서브메뉴4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--/header-->
+
+        <div id="slider">
+        </div>
+        <!--/slider-->
+
+        <div id="contents">
+            <div class="content1"></div>
+            <div class="content2"></div>
+            <div class="content3"></div>
+        </div>
+        <!--/content-->
+
+        <div id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+        </div>
+        <!--/footer-->
+    </div>
+    <!--/wrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        // $(function(){
+        //     $(".nav > ul > li").mouseover(function(){
+        //         $(this).find(".submenu").stop().slideDown();
+        //     });
+        //     $(".nav > ul > li").mouseout(function(){
+        //         $(this).find(".submenu").stop().slideUp();
+        //     });
+        // });
+        $(function(){
+            $(".nav > ul > li").mouseover(function(){
+                $(this).find(".submenu").stop().slideDown();
+            });
+            $(".nav > ul > li").mouseout(function(){
+                $(this).find(".submenu").stop().slideUp();
+            });
+        });
+    </script>
+</body>
+</html>
