@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul,li{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+}
+
+#wrap{
+    width:100%;
+    display: flex;
+    flex-wrap:wrap;
+}
+
+#aside{
+    width:200px;
+    background-color: #c9c9c9;
+}
+#aside .logo{
+    width:100%;
+    height:100px;
+    background-color: #fbc9c9;
+}
+#aside .nav{
+    height:550px;
+    background-color: #fff;
+}
+
+#main{
+    width:calc(100% - 200px);
+    background-color: #fde7e7;
+}
+#slider{
+    width:100%;
+    display:flex;
+}
+#slider .image{
+    width:calc(100% - 230px);
+    height:400px;
+    background-color: #fec5c5;
+}
+#slider .baner{
+    width:230px;
+    height: 400px;
+    background-color: #ff9898;
+}
+#contents{
+    display: flex;
+    width:100%;
+}
+#contents .content1{
+    width:50%;
+    height:250px;
+    background-color: #979797;
+}
+#contents .content2{
+    width:50%;
+    height:250px;
+    background-color: #f4b9b9;
+}
+
+#footer{
+    display: flex;
+    width:100%;
+}
+#footer .footer1{
+    width:20%;
+    height: 100px;
+    background-color: #f86f6f;
+}
+#footer .footer2{
+    width:60%;
+    height: 100px;
+    background-color: #e6e6e6;
+}
+#footer .footer3{
+    width:20%;
+    height:100px;
+    background-color: #ff8d8d;
+}
+
+    </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="aside">
+        <div class="logo"></div>
+        <div class="nav"></div>
+    </div>
+    <!--/aside-->
+    <div id="main">
+        <div id="slider">
+            <div class="image"></div>
+            <div class="baner"></div>
+        </div>
+        <div id="contents">
+            <div class="content1"></div>
+            <div class="content2"></div>
+        </div>
+    </div>
+    <!--/main-->
+    <div id="footer">
+        <div class="footer1"></div>
+        <div class="footer2"></div>
+        <div class="footer3"></div>
+    </div>
+    <!--/footer-->
+  </div>
+  <!--/wrap-->
+</body>
+</html>
