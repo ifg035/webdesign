@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-3</title>
+    <style>
+        @charset "utf-8";
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,li,dl{
+            list-style:none;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        #wrap{
+            display: flex;
+            flex-wrap:wrap;
+            width:100%;
+        }
+
+        #header{
+            width:200px
+        }
+        #header .logo{
+            width:100%;
+            height:150px;
+            background-color: #e2e2e2;
+        }
+        #header .nav{
+            width:100%;
+            height:700px;
+            background-color: #e6e6e6;
+        }
+        
+        section{
+            width:calc(100% - 200px);
+        }
+
+        #slider{
+            width:100%;
+        }
+        #slider .img{
+            position:relative;
+            width:100%;
+            height: 400px;
+            background-color: #eeeeee;
+        }
+        #slider .baner{
+            position:absolute;
+            top:0;
+            right:0;
+            width:10%;
+            height: 300px;
+            background-color: #dadada;
+        }
+        #slider .baner .b-img1{
+            width:100%;
+            height:100px;
+            background-color: #ffdfdf;
+        }
+        #slider .baner .b-img2{
+            width:100%;
+            height:100px;
+            background-color: #ffdff3;
+        }
+        #slider .baner .b-img3{
+            width:100%;
+            height:100px;
+            background-color: #ffdfdf;
+        }
+
+        #content{
+            width:100%;
+            height: 200px;
+            background-color: #dedede;
+        }
+
+        #info{
+            width:100%;
+            height:250px;
+            background-color: #dddddd;
+        }
+
+        #footer{
+            display:flex;
+            width:100%;
+        }
+        #footer .footer1{
+            width:200px;
+            height: 100px;
+            background-color: #e9e9e9;
+        }
+        #footer-container{
+            width:calc(100% - 200px);
+        }
+        #footer-container .link{
+            width:100%;
+            height:50px;
+            background-color: #fbeded;
+        }
+        #footer-container .copyright{
+            width:100%;
+            height:50px;
+            background-color: #ffd8d8;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo"></div>
+            <div class="nav"></div>
+        </div>
+        <section>
+            <div id="slider">
+                <div class="img"></div>
+                <div class="baner">
+                    <div class="b-img1"></div>
+                    <div class="b-img2"></div>
+                    <div class="b-img3"></div>
+                </div>
+            </div>
+            <div id="content"></div>
+            <div id="info"></div>
+        </section>
+        <div id="footer">
+            <div class="footer1"></div>
+            <div id="footer-container">
+                <div class="link"></div>
+                <div class="copyright"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
