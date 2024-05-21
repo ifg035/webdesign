@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-1</title>
+    <style>
+        @charset "utf-8";
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul,li,dl{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+        }
+
+        #wrap{
+            width:100%;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+
+        header{
+            display: flex;
+            margin:0 auto;
+            width:1340px;
+            height: 100px;
+        }
+        header .logo{
+            width:20%;
+            height: 100px;
+            background-color: #ffe3e3;
+        }
+        header .nav{
+            width:80%;
+            height:100px;
+            background-color: #e7e7e7;
+        }
+
+        #slider{
+            position:relative;
+            width:100%;
+            height: calc(100vh - 430px);
+            background-color: #d6d6d6;
+        }
+
+        main{
+            width:100%;
+            height: calc(100vh - 220px);
+        }
+        #images{
+            position: absolute;
+            top:53%;
+            right:0;
+            width:1340px;
+            height: 150px;
+            background-color: #e4e4e4;
+        }
+        /* #baner{
+            width: 1340px;
+            height: 230px;
+            background-color: #e4e4e4;
+        } */
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="logo"></div>
+            <div class="nav"></div>
+        </header>
+        <div id="slider"></div>
+        <main>
+            <div id="images"></div>
+            <div id="baner"></div>
+            <div id="notice"></div>
+        </main>
+        <footer>
+            <div class="footer1"></div>
+            <div class="footer2">
+                <div class="footer2-1"></div>
+                <div class="footer2-2"></div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
