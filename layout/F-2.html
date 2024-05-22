@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F-1</title>
+    <title>F-2</title>
     <style>
         @charset "utf-8";
         *{
@@ -19,85 +19,75 @@
 
         #wrap{
             width:100%;
-            flex-wrap: wrap;
-            margin:auto;
         }
 
         header{
-            display: flex;
-            margin:auto;
             width:1340px;
             height: 100px;
+            margin:0 auto;
+            background-color: #ffebeb;
         }
-        header .logo{
-            width:20%;
-            height: 100px;
-            background-color: #ffe3e3;
-        }
-        header .nav{
-            width:80%;
-            height:100px;
-            background-color: #e7e7e7;
-        }
-
+        
         #slider{
             position:relative;
             width:100%;
-            height: calc(100vh - 430px);
-            background-color: #e6e6e6;
+            height:350px;
+            background-color: #d6d6d6;
         }
-
-        main{
-            width:100%;
-        }
-        #images{
-            position: absolute;
-            top:486px;
+        #slider .images{
+            position:absolute;
+            top:200px;
             left:0;
             right:0;
             margin:auto;
             width:1340px;
-            height: 150px;
-            background-color: #88888853;
+            height:150px;
+            background-color: beige;
         }
-        #baner{
-            width: 1340px;
-            height: 230px;
-            background-color: #e4e3e3;
-            margin:auto;
-        }
-        #notice{
+
+        main{
             width:1340px;
-            height:400px;
-            background-color: #d1d0d0;
+            height:550px;
             margin:0 auto;
+            background-color: #cfcfcf;
+        }
+        main #baner{
+            width:100%;
+            height:150px;
+            background-color: #e0dfdf;
+        }
+        main #notice{
+            width:100%;
+            height: 400px;
+            background-color: #c4c4c4;
         }
 
         footer{
             display:flex;
             width:1340px;
-            height: 120px;
-            background-color: #ffc8c8;
-            margin:auto;
+            height:120px;
+            margin:0 auto;
+            background-color: #e9e9e9;
         }
         footer .footer1{
-            width:20%;
-            height: 120px;
-            background-color: #e7e7e7;
+            width:80%;
+            height:120px;
+            background-color: #888888;
         }
         footer .footer2{
-            width:80%;
-            height: 120px;
+            width:20%;
+            height:120px;
+            background-color: #e5e5e5;
         }
         .footer2 .footer2-1{
             width:100%;
             height:60px;
-            background-color: #ffe8e8;
+            background-color: #fbdada;
         }
         .footer2 .footer2-2{
             width:100%;
             height:60px;
-            background-color: #cdcdcd;
+            background-color: #ff8d8d;
         }
     </style>
 </head>
@@ -107,9 +97,10 @@
             <div class="logo"></div>
             <div class="nav"></div>
         </header>
-        <div id="slider"></div>
+        <div id="slider">
+            <div class="images"></div>
+        </div>
         <main>
-            <div id="images"></div>
             <div id="baner"></div>
             <div id="notice"></div>
         </main>
