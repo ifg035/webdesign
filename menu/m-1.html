@@ -13,7 +13,6 @@
         
         ul,li,dl{
             list-style:none;
-            text-decoration: none;
         }
 
         a{
@@ -46,10 +45,10 @@
         .nav > ul{
             display: flex;
             justify-content:right;
+            margin-top:30px;
         }
         .nav > ul > li{
             position:relative;
-            margin-top:30px;
         }
         .nav > ul > li > a{
             background-color: #fff;
@@ -64,14 +63,8 @@
             position:absolute;
             top:40px;
             left:0;
+            background: chocolate;
             width:100%;
-            /*자바스크립트용 CSS*/
-            display:block;
-            height:0;
-            overflow:hidden;
-            transition: all 600ms;
-        }
-        .nav > ul > li > ul > li{
             text-align:center;
             display: none;
         }
@@ -84,6 +77,13 @@
         }
         .nav > ul > li > ul > li > a:hover{
             background-color: #2b2b2b;
+        }
+        /*자바스크립트*/
+        .nav > ul > li > ul{
+            display: block;
+            height:0;
+            overflow:hidden;
+            transition:all 600ms;
         }
 
         #slider{
@@ -187,27 +187,29 @@
         </div>
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-       $(function(){
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+
+    $(function(){
         $(".nav > ul > li").mouseover(function(){
             $(this).find(".submenu").stop().slideDown();
         })
         $(".nav > ul > li").mouseout(function(){
             $(this).find(".submenu").stop().slideUp();
         })
-       })
+    })
+    </script>
 
+    <script>
     window.onload = function(){
         let navList = document.querySelectorAll(".nav > ul > li");
 
-        navList.forEach(function(navltem){
-            navitem.addEventListener("mouseover",function(){
+        navList.forEach(function(navItem){
+            navItem.addEventListener("mouseover",function(){
                 this.querySelector(".submenu").style.height = "155px";
             });
         });
-        navList.forEach(function(navltem){
-            navitem.addEventListener("mouseout",function(){
+        navList.forEach(function(navItem){
+            navItem.addEventListener("mouseout",function(){
                 this.querySelector(".submenu").style.height = "0px";
             });
         });
