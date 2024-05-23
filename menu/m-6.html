@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D-1</title>
+    <title>m-6</title>
     <style>
         *{
             padding: 0;
@@ -16,6 +16,7 @@
 
         a{
             text-decoration:none;
+            color:#000;
         }
 
         #wrap{
@@ -43,7 +44,61 @@
             background-color: #dddddd;
         }
 
-        section{
+        /*nav*/
+        .nav{
+            position:relative;
+            z-index:1000;
+        }
+        .nav>ul>li{
+            position:relative;
+        }
+        .nav>ul>li>a{
+            padding:10px;
+            display: block;
+            text-align:center;
+            background-color: #fff;
+        }
+        .nav>ul>li>a:hover{
+            background-color:#414141;
+        }
+        .nav>ul>li>ul{
+            position:absolute;
+            top:0;
+            right:-500px;
+            width:500px;
+            /* background-color: #fff; */
+            display: none;
+        }
+        .nav>ul>li>ul>li{
+            display: inline;
+        }
+        .nav>ul>li>ul>li>a{
+            width:100px;
+            display: inline-block;
+            padding:10px;
+        }
+        .nav>ul>li>ul>li>a:hover{
+            background-color:#414141;
+        }
+        #main{
+            position: relative;
+        }
+        #main::after{
+            content:"";
+            width:0%;
+            height:205px;
+            position:absolute;
+            background-color: #fff;
+            top:150px;
+            left:0;
+            z-index:1;
+            transition:all 400ms;
+        }
+        #main.on::after{
+            width:100%;
+        }
+
+        #main{
             width:calc(100% - 200px);
         }
         
@@ -121,10 +176,53 @@
         <div id="head">
             <div id="header">
                 <div class="logo"></div>
-                <div class="nav"></div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="#">menu1</a>
+                            <ul class="submenu">
+                                <li><a href="#">submenu1</a></li>
+                                <li><a href="#">submenu2</a></li>
+                                <li><a href="#">submenu3</a></li>
+                                <li><a href="#">submenu4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">menu2</a>
+                            <ul class="submenu">
+                                <li><a href="#">submenu1</a></li>
+                                <li><a href="#">submenu2</a></li>
+                                <li><a href="#">submenu3</a></li>
+                                <li><a href="#">submenu4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">menu3</a>
+                            <ul class="submenu">
+                                <li><a href="#">submenu1</a></li>
+                                <li><a href="#">submenu2</a></li>
+                                <li><a href="#">submenu3</a></li>
+                                <li><a href="#">submenu4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">menu4</a>
+                            <ul class="submenu">
+                                <li><a href="#">submenu1</a></li>
+                                <li><a href="#">submenu2</a></li>
+                                <li><a href="#">submenu3</a></li>
+                                <li><a href="#">submenu4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">menu5</a>
+                            <ul class="submenu">
+                                <li><a href="#">submenu1</a></li>
+                                <li><a href="#">submenu2</a></li>
+                                <li><a href="#">submenu3</a></li>
+                                <li><a href="#">submenu4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <section>
+        <div id="main">
             <div id="slider">
                 <div class="img"></div>
                 <div class="baner">
@@ -135,7 +233,7 @@
             </div>
             <div id="content"></div>
             <div id="info"></div>
-        </section>
+        </div>
         <div id="footer">
             <div class="footer1"></div>
             <div class="footer2"></div>
@@ -143,4 +241,17 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".nav>ul>li").mouseover(function(){
+                $(".nav>ul>li>ul").stop().fadeIn();
+                $("#main").addClass("on");
+            })
+            $(".nav>ul>li").mouseout(function(){
+                $(".nav>ul>li>ul").stop().fadeOut();
+                $("#main").removeClass("on");
+            })
+        })
+    </script>
 </html>
