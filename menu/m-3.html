@@ -47,58 +47,52 @@
         }
         #header::after{
             content:"";
-            width:100%;
-            height:0px;
-            z-index:1;
-            background-color: #fff;
-            position:absolute;
+            position: absolute;
             top:100px;
             left:0;
-            transition:all 400ms;
+            width:100%;
+            height:0px;
+            background-color: #fff;
         }
         #header.on::after{
-            height: 155px;
+            height:160px;
         }
-
         .nav{
             z-index:1000;
         }
         .nav>ul{
-            display: flex;
+            display:flex;
             justify-content: right;
-            margin-top:61px;
+            margin-top:69px;
         }
         .nav>ul>li{
-            position:relative;
+            position: relative;
         }
         .nav>ul>li>a{
-            display: inline-block;
-            padding:10px 50px;
             background-color: #fff;
+            padding:10px 50px;
         }
         .nav>ul>li>a:hover{
-            background-color: #787878;
+            background-color: #707070;
         }
         .nav>ul>li>ul{
-            display: none;
             position:absolute;
-            left:0;
-            top:39px;
+            top:30px;
+            left:0px;
             width:100%;
-            text-align: center;
+            display: none;
         }
         .nav>ul>li>ul>li>a{
+            /* background-color: #fff; */
+            padding: 10px;
+            width:100%;
+            text-align:center;
+            box-sizing:border-box;
             display: inline-block;
-            padding:10px;
-            width: 100%;
-            box-sizing: border-box;
-
         }
         .nav>ul>li>ul>li>a:hover{
-            background-color: #787878;
+            background-color: #707070;
         }
-
-
 
         #slider{
             width:100%;
@@ -203,14 +197,35 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
+   /*menu-1*/
+//    $(function(){
+//     $(".nav>ul>li").mouseover(function(){
+//         $(this).find(".submenu").stop().slideDown(200);
+//     });
+//     $(".nav>ul>li").mouseout(function(){
+//         $(this).find(".submenu").stop().slideUp(200);
+//     })
+//    })
+
+    /*menu-2*/
+    // $(function(){
+    //     $(".nav>ul>li").mouseover(function(){
+    //         $(".nav>ul>li>ul").stop().slideDown(200);
+    //     });
+    //     $(".nav>ul>li").mouseout(function(){
+    //         $(".nav>ul>li>ul").stop().slideUp(200);
+    //     });
+    // })
+
+    /*menu-3*/
     $(function(){
         $(".nav>ul>li").mouseover(function(){
-            $(".nav>ul>li>ul").stop().slideDown(900);
+            $(".nav>ul>li>ul").stop().slideDown(700);
             $("#header").addClass("on");
-        });
+        })
         $(".nav>ul>li").mouseout(function(){
-            $(".nav>ul>li>ul").stop().slideDown(900);
+            $(".nav>ul>li>ul").stop().slideUp(700);
             $("#header").removeClass("on");
-        });
+        })
     })
 </script>
