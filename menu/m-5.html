@@ -43,37 +43,36 @@
             background-color: #dddddd;
         }
         /*nav*/
-        .nav>ul>li{
-            position:relative;
-        }
-        .nav>ul>li>a{
-            display:block;
-            background-color: #fff;
-            padding:10px;
-            text-align:center;
-
-        }
-        .nav>ul>li>a:hover{
-            background-color: #575757;
-        }
-        .nav>ul>li>ul{
-            position:absolute;
-            top:0;
-            right:-200px;
-            width:200px;
-            z-index: 1;
-            display: none;
-        }
-        .nav>ul>li>ul>li>a{
-            display: block;
-            padding:10px;
-            text-align: center;
-            background-color: #fff;
-
-        }
-        .nav>ul>li>ul>li>a:hover{
-            background-color: #575757;
-        }
+       .nav>ul>li{
+        position:relative;
+       }
+       .nav>ul>li>a{
+        background-color: #fff;
+        padding:10px;
+        display: block;
+        text-align: center;
+       }
+       .nav>ul>li>a:hover{
+        background-color:#333;
+       }
+       .nav>ul>li>ul{
+        z-index:1;
+        position:absolute;
+        top:0;
+        right:-200px;
+        width:200px;
+        display: none;
+       }
+       .nav>ul>li>ul>li>a{
+        text-align:center;
+        display: block;
+        background-color: #fff;
+        width:100%;
+        padding:10px;
+       }
+       .nav>ul>li>ul>li>a:hover{
+        background-color:#333;
+       }
         
         section{
             width:calc(100% - 200px);

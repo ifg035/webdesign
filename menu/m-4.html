@@ -45,25 +45,25 @@
         }
         /*nav*/
         .nav>ul>li>a{
-            display: block;
-            padding:10px;
-            text-align: center;
             background-color: #fff;
+            padding:10px;
+            display: block;
+            text-align:center;
         }
         .nav>ul>li>a:hover{
-            background-color: #5b5b5b;
+            background-color: #424242;
         }
         .nav>ul>li>ul{
             display: none;
         }
         .nav>ul>li>ul>li>a{
-            display: block;
-            padding: 10px;
-            text-align:center;
             background-color: #fff;
+            padding:10px;
+            display: block;
+            text-align: center;
         }
         .nav>ul>li>ul>li>a:hover{
-            background-color: #5b5b5b;
+            background-color: #424242;
         }
 
         section{
@@ -205,11 +205,11 @@
 <script>
    $(function(){
     $(".nav>ul>li").mouseover(function(){
-        $(this).find(".submenu").stop().slideDown()
-    });
+        $(this).find(".submenu").stop().slideDown();
+    })
     $(".nav>ul>li").mouseout(function(){
-        $(this).find(".submenu").stop().slideUp()
-    });
+        $(this).find(".submenu").stop().slideUp();
+    })
    })
 </script>
 </html>

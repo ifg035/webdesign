@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-1</title>
+    <title>m-1</title>
     <style>
         @charset "utf-8";
         *{
@@ -17,6 +17,7 @@
 
         a{
             text-decoration:none;
+            color:#333;
         }
 
         
@@ -42,48 +43,43 @@
         }
 
         /* nav */
-        .nav > ul{
+        .nav>ul{
             display: flex;
             justify-content:right;
-            margin-top:30px;
+            margin-top:40px;
         }
-        .nav > ul > li{
+        .nav>ul>li{
             position:relative;
+            
         }
-        .nav > ul > li > a{
+        .nav>ul>li>a{
             background-color: #fff;
-            padding:10px 40px;
-            display:inline-block;
-
+            display: inline-block;
+            padding:10px 50px;
+            text-align:center;
         }
-        .nav > ul > li > a:hover{
-            background-color: #2b2b2b;
+        .nav>ul>li>a:hover{
+            background-color: #636363;
         }
-        .nav > ul > li > ul{
+        .nav>ul>li>ul{
             position:absolute;
             top:40px;
             left:0;
+            text-align: center;
             width:100%;
-            text-align:center;
             display: none;
         }
-        .nav > ul > li > ul > li > a{
+        .nav>ul>li>ul>li>a{
             background-color: #fff;
-            display: inline-block;
-            box-sizing: border-box;
             padding:10px;
             width:100%;
+            box-sizing:border-box;
+            display: inline-block;
         }
-        .nav > ul > li > ul > li > a:hover{
-            background-color: #2b2b2b;
+        .nav>ul>li>ul>li>a:hover{
+            background-color: #636363;
         }
-        /*자바스크립트*/
-        /* .nav > ul > li > ul{
-            display: block;
-            height:0;
-            overflow:hidden;
-            transition:all 600ms;
-        } */
+        
 
         #slider{
             width:100%;
@@ -189,13 +185,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <script>
-      $(function(){
-        $(".nav>ul>li").mouseover(function(){
-            $(this).find(".submenu").stop().slideDown();
+        $(function(){
+            $(".nav>ul>li").mouseover(function(){
+                $(this).find(".submenu").stop().slideDown();
+            });
+            $(".nav>ul>li").mouseout(function(){
+                $(this).find(".submenu").stop().slideUp();
+            });
         })
-        $(".nav>ul>li").mouseout(function(){
-            $(this).find(".submenu").stop().slideUp();
-        })
-      })
     </script>
 </html>

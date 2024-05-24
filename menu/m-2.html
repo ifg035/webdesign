@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-1</title>
+    <title>m-2</title>
     <style>
         @charset "utf-8";
         *{
@@ -17,6 +17,7 @@
 
         a{
             text-decoration:none;
+            color:#333;
         }
 
         
@@ -42,48 +43,40 @@
         }
 
         /* nav */
-        .nav>ul{
-            display:flex;
-            justify-content:right;
-            margin-top:30px;
-        }
-        .nav>ul>li{
-            position:relative;
-        }
-        .nav>ul>li>a{
-            background-color: #fff;
-            padding:10px 50px;
-            display:inline-block;
-        }
-        .nav>ul>li>a:hover{
-            background-color:#606060;
-        }
-        .nav>ul>li>ul{
-            position:absolute;
-            top:41px;
-            left:0;
-            width:100%;
-            text-align: center;
-            display: none;
-        }
-        .nav>ul>li>ul>li>a{
-            display: inline-block;
-            width:100%;
-            padding:10px;
-            box-sizing:border-box;
-            background-color: #fff;
-        }
-        .nav>ul>li>ul>li>a:hover{
-            background-color:#606060;
-        }
-
-        /* 자바스크립트*/
-        /* .nav > ul > li > ul{
-            overflow:hidden;
-            display: block;
-            height: 0;
-            transition:all 600ms;
-        } */
+       .nav>ul{
+        display:flex;
+        justify-content:right;
+        margin-top:58px;  
+       }
+       .nav>ul>li{
+        position:relative;
+       }
+       .nav>ul>li>a{
+        background-color: #fff;
+        padding:10px 50px;
+        display: inline-block;
+       }
+       .nav>ul>li>a:hover{
+        background-color:#333;
+       }
+       .nav>ul>li>ul{
+        position:absolute;
+        top:40px;
+        left:0;
+        width:100%;
+        text-align: center;
+        display: none;
+       }
+       .nav>ul>li>ul>li>a{
+        display: inline-block;
+        background-color: #fff;
+        width:100%;
+        padding:10px;
+        box-sizing:border-box;
+       }
+       .nav>ul>li>ul>li>a:hover{
+        background-color:#333;
+       }
 
         #slider{
             width:100%;
@@ -188,31 +181,13 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>
-        /*서브메뉴를 한꺼번에*/
-       $(function(){
-         $(".nav>ul>li").mouseover(function(){
-            $(".nav>ul>li>ul").stop().slideDown(200);
-         })
-         $(".nav>ul>li").mouseout(function(){
-            $(".nav>ul>li>ul").stop().slideUp(200);
-         })
-       })
+           $(function(){
+                $(".nav>ul>li").mouseover(function(){
+                    $(".nav>ul>li>ul").stop().slideDown(200);
+                });
+                $(".nav>ul>li").mouseout(function(){
+                    $(".nav>ul>li>ul").stop().slideUp(200);
+                });
+           })
         </script>
-
-    <!-- <script>
-        window.onload = function(){
-            let navList = document.querySelector(".nav > ul");
-
-            navList.addEventListener("mouseover",function(){
-                navList.querySelectorAll(".submenu").forEach(sub=>{
-                    sub.style.height = "155px";
-                });
-            });
-            navList.addEventListener("mouseout",function(){
-                navList.querySelectorAll(".submenu").forEach(sub=>{
-                    sub.style.height = "0px";
-                });
-            });
-        }
-    </script> -->
 </html>
