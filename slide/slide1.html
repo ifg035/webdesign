@@ -37,37 +37,39 @@
             background-color: #DDDD;
         }
 
+        
+        /*slider*/
+
         #slider{
             width:100%;
             height:300px;
             background-color: #d2d2d2;
         }
-        /*slider*/
-        .sliderWrap{
+        .sliderwrap{
             position:relative;
         }
-        .sliderWrap > div{
+        .sliderwrap > div{
             display:none;
         }
-        .sliderWrap > div:first-child{
+        .sliderwrap > div:first-child{
             display:block;
         }
-        .sliderWrap .slider{
-            position: absolute;
-            left:0;
+        .sliderwrap .slider {
+            position:absolute;
             top:0;
+            left:0;
         }
-        .sliderWrap .slider img{
+        .sliderwrap .slider img{
             vertical-align:top;
         }
-        .sliderWrap .slider span{
+        .sliderwrap .slider span{
             position:absolute;
-            left:50%;
             top:50%;
+            left:50%;
             transform:translate(-50%,-50%);
-            background-color: rgba(0,0,0,0.4);
-            padding:10px 20px;
-            color:#fff
+            background-color:rgba(0, 0, 0, 0.4);
+            padding: 10px 20px;
+            color:#fff;
         }
 
         #contents{
@@ -117,22 +119,22 @@
             <div class="logo"></div>
             <div class="nav"></div>
         </div>
-        <article id="slider">
-            <div class="sliderWrap">
+        <div id="slider">
+            <div class="sliderwrap">
                 <div class="slider s1">
-                    <img src="images/slider01.jpg" alt="1">
-                    <span>이미지1</span>
+                    <img src="images/slider01.jpg" alt="image1">
+                    <span>image1</span>
                 </div>
                 <div class="slider s2">
-                    <img src="images/slider02.jpg" alt="2">
-                    <span>이미지2</span>
+                    <img src="images/slider02.jpg" alt="image2">
+                    <span>image2</span>
                 </div>
                 <div class="slider s3">
-                    <img src="images/slider03.jpg" alt="3">
-                    <span>이미지3</span>
+                    <img src="images/slider03.jpg" alt="image3">
+                    <span>image3</span>
                 </div>
             </div>
-        </article>
+        </div>
         <div id="contents">
             <div class="content1"></div>
             <div class="content2"></div>
@@ -147,17 +149,19 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
-    $(function(){
-        let currentIndex = 0;   //현재 이미지
-        
-        setInterval(function(){     //3초에 한번씩 실행
-            let nextIndex = (currentIndex + 1) % 3; // 1 2 0 1 2 무한반복
+   $(function(){
 
-            $(".slider").eq(currentIndex).fadeOut(1200);    //첫번째 이미지 사라짐
-            $(".slider").eq(nextIndex).fadeIn(1200);        //두번째 이미지 나타남
+    let currentIndex = 0; //현재이미지
 
-            currentIndex = nextIndex;  //두번째 인덱값을 현재 인덱값에 저장
-        }, 3000);
-    });
+    setInterval(function(){
+
+        let nextIndex = (currentIndex + 1)%3; // 1 2 0 1 2 0 반복
+
+        $(".slider").eq(currentIndex).fadeOut(1200);
+        $(".slider").eq(nextIndex).fadeIn(1200);
+
+        currentIndex = nextIndex;
+    },3000)
+   })
 </script>
 </html>
