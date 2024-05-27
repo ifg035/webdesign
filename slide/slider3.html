@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider3</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,li{
+            list-style:none;
+        }
+
+        a{
+            text-decoration:none;
+        }
+        #wrap{
+            width:1200px;
+            margin:0 auto;
+        }
+        
+        #header {
+            display: flex;
+            width:100%;
+        }
+        #header .logo{
+            width:20%;
+            height:100px;
+            background-color: #e9e9e9;
+        }
+        #header .nav{
+            width:80%;
+            height:100PX;
+            background-color: #DDDD;
+        }
+        #slider{
+            width:100%;
+            height:300px;
+            background-color: #d2d2d2;
+        }
+        /*slider*/
+
+        #slider{
+            overflow:hidden;
+        }
+        .sliderwrap .slider{
+            position:relative;
+        }
+        .sliderwrap .slider img{
+            vertical-align:top;
+        }
+        .sliderwrap .slider span{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            color:#fff;
+            background-color:rgba(0, 0, 0, 0.4);
+            padding:10px 20px;
+        }
+
+        #contents{
+            display:flex;
+            width:100%;
+        }
+        #contents .content1{
+            width:33.3333%;
+            height:200px;
+            background-color: #dcdcdc;
+        }
+        #contents .content2{
+            width:33.3333%;
+            height:200px;
+            background-color: #ffffff;
+        }
+        #contents .content3{
+            width:33.3333%;
+            height:200px;
+            background-color: #dcdcdc;
+        }
+
+        #footer{
+            display: flex;
+            width:100%;
+        }
+        #footer .footer1{
+            width:20%;
+            height:100px;
+            background-color: #e8e8e8;
+        }
+        #footer .footer2{
+            width:60%;
+            height:100px;
+            background-color: #b9b9b9;
+        }
+        #footer .footer3{
+            width:20%;
+            height:100px;
+            background-color: #e8e8e8;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo"></div>
+            <div class="nav"></div>
+        </div>
+        <article id="slider">
+            <div class="sliderwrap">
+                <div class="slider s1">
+                    <img src="images/slider01.jpg" alt="이미지1">
+                    <span>이미지1</span>
+                </div>
+                <div class="slider s2">
+                    <img src="images/slider02.jpg" alt="이미지2">
+                    <span>이미지2</span>
+                </div>
+                <div class="slider s3">
+                    <img src="images/slider03.jpg" alt="이미지3">
+                    <span>이미지3</span>
+                </div>
+            </div>
+        </article>
+        <div id="contents">
+            <div class="content1"></div>
+            <div class="content2"></div>
+            <div class="content3"></div>
+        </div>
+        <div id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(function(){
+        let currentIndex = 0;
+        $(".sliderwrap").append($(".slider").first().clone(true));
+
+        setInterval(function(){
+            currentIndex++;
+            $(".sliderwrap").animate({marginTop:-currentIndex * 300 + "px"},600);
+
+            if(currentIndex == 3){
+                setTimeout(function(){
+                $(".sliderwrap").animate({marginTop:0},0);
+            },700)
+            currentIndex = 0; 
+        }
+        },3000);
+    });
+</script>
+</html>
