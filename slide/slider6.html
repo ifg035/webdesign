@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider6</title>
+    <style>
+        @charset "utf-8";
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li,ul,dl{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+        }
+
+        #wrap{
+            display: flex;
+            flex-wrap:wrap;
+            width:100%
+        }
+
+        header{
+            width:200px;
+            height: calc(100vh - 120px);
+        }
+        header .logo{
+            width:100%;
+            height:120px;
+            background-color: #efefef;
+        }
+        header .nav{
+            width:100%;
+            height:calc(100vh - 240px);
+            background-color: #ebebeb;
+        }
+
+        main{
+            display:flex;
+            width:calc(100% - 200px);
+            height:calc(100vh - 120px);
+        }
+        main #contents{
+            width:400px;
+        }
+        #contents .baner{
+            width:100%;
+            height:15vh;
+            background-color: #e7e7e7;
+        }
+        #contents .notice{
+            width:100%;
+            height:25vh;
+            background-color: #f0f0f0;
+        }
+        #contents .gallery{
+            width:100%;
+            height:35vh;
+            background-color: #dadada;
+        }
+        #contents .images{
+            width:100%;
+            height:12.6vh;
+            background-color: #d4d4d4;
+        }
+
+        #slider{
+            width:100%;
+            height:100%;
+            background-color: #c9c8c8;
+        }
+        /*slider*/
+        #slider{
+            overflow:hidden;
+            height:calc(100vh - 120px)
+        }
+        .sliderwrap{
+            width:100%;
+            height:300ch
+        }
+        .sliderwrap .slider{
+            position:relative;
+            width:100%;
+            height:100vh;
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:cover;
+        }
+        .sliderwrap .slider img{
+            vertical-align:top;
+        }
+        .sliderwrap .slider span{
+            position:absolute;
+            top:45%;
+            left:45%;
+            transform:translate(-50%,-50%);
+            padding:10px 20px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        .sliderwrap .slider.s1{
+            background-image: url(images/slider01.jpg);
+        }
+        .sliderwrap .slider.s2{
+            background-image: url(images/slider02.jpg);
+        }
+        .sliderwrap .slider.s3{
+            background-image: url(images/slider03.jpg);
+        }
+
+        footer{
+            display: flex;
+            width:100%;
+        }
+        footer .footer1{
+            width:200px;
+            height:120px;
+            background-color: #cacaca;
+        }
+        footer .footer2{
+            width:calc(100% - 200px);
+            height:120px;
+            background-color: #979797;
+        }
+        .footer2 .footer2-1{
+            width:100%;
+            height:60px;
+            background-color: #ececec;
+        }
+        .footer2 .footer2-2{
+            width:100%;
+            height:60px;
+            background-color: #b1b1b1;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="logo"></div>
+            <div class="nav"></div>
+        </header>
+        <main>
+            <div id="contents">
+                <div class="baner"></div>
+                <div class="notice"></div>
+                <div class="gallery"></div>
+                <div class="images"></div>
+            </div>
+            <div id="slider">
+                <div class="sliderwrap">
+                    <div class="slider s1">
+                        <span>image1</span>
+                    </div>
+                    <div class="slider s2">
+                        <span>image2</span>
+                    </div>
+                    <div class="slider s3">
+                        <span>image3</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer1"></div>
+            <div class="footer2">
+                <div class="footer2-1"></div>
+                <div class="footer2-2"></div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(function(){
+        let currentIndex = 0;
+        $(".sliderwrap").append($(".slider").first().clone(true))
+
+        setInterval(function(){
+            currentIndex++;
+            $(".sliderwrap").animate({marginTop:-100 * currentIndex + "vh"},600)
+            if(currentIndex == 3){
+                $(".sliderwrap").animate({marginTop:0},0)
+            }
+        },3000)
+    })
+</script>
+</html>
