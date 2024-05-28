@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-2</title>
+    <title>slider123</title>
     <style>
         *{
             margin: 0;
@@ -43,6 +43,60 @@
             height:300px;
             background-color: #d2d2d2;
         }
+        /*slider1*/
+        /* .sliderwrap{
+            position:relative;
+        }
+        .sliderwrap > div{
+            display:none;
+        }
+        .sliderwrap > div:first-child{
+            display:block;
+        }
+        .sliderwrap .slider{
+            position:absolute;
+        }
+        .sliderwrap .slider img{
+            vertical-align:center;
+        }
+        .sliderwrap .slider span{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            color:#fff;
+            background-color: rgba(0, 0, 0,0.4);
+            padding:10px 20px;
+        } */
+
+        /*slider2*/
+        .sliderwrap{
+            position:relative;
+            display: flex;
+        }
+        .sliderwrap > div{
+            display: none;
+        }
+        .sliderwrap > div:first-child{
+            display: block;
+        }
+        .sliderwrap .slider{
+            position:absolute;
+        }
+        .sliderwrap .slider img{
+            vertical-align:top;
+        }
+        .sliderwrap .slider span{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            color:#fff;
+            padding:10px 20px;
+        }
+        
+        /*slider3*/
 
         #contents{
             display:flex;
@@ -91,7 +145,22 @@
             <div class="logo"></div>
             <div class="nav"></div>
         </div>
-        <div id="slider"></div>
+        <div id="slider">
+            <div class="sliderwrap">
+                <div class="slider s1">
+                    <img src="images/slider01.jpg" alt="image1">
+                    <span>image1</span>
+                </div>
+                <div class="slider s2">
+                    <img src="images/slider02.jpg" alt="image2">
+                    <span>image2</span>
+                </div>
+                <div class="slider s1">
+                    <img src="images/slider03.jpg" alt="image3">
+                    <span>image3</span>
+                </div>
+            </div>
+        </div>
         <div id="contents">
             <div class="content1"></div>
             <div class="content2"></div>
@@ -104,4 +173,38 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    //slider1
+    // let currentIndex = 0;
+
+    // setInterval(function(){
+
+    //     let nextIndex = (currentIndex + 1)% 3 ;
+        
+    //     $(".slider").eq(currentIndex).fadeOut(1200);
+    //     $(".slider").eq(nextIndex).fadeIn(1200);
+    //     currentIndex = nextIndex;
+    // },3000)
+
+    //slider2
+        $(function(){
+            let currentIndex = 0;
+            $(".sliderwrap").append($(".slider").first().clone(true));
+
+            setInterval(function(){
+                currentIndex++;
+                $(".sliderwrap").animate({marginLeft:-currentIndex * 100 + "%" },600)
+
+                if(currentIndex == 3)
+                setTimeout(function(){
+                    $(".sliderwrap").animate({marginLeft:0},0);
+
+                    cureentIndex = 0;
+                },700)
+            },3000)
+        });
+
+    //slider3
+</script>
 </html>
