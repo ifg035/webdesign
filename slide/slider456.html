@@ -73,37 +73,112 @@
             background-color: #c9c8c8;
         }
         /*slider4*/
-        .sliderwrap{
+       /* .sliderwrap{
             position:relative;
             height:100%;
-        }
-        .sliderwrap > div{
+       }
+       .sliderwrap > div{
             display:none;
-        }
-        .sliderwrap > div:first-child{
+       }
+       .sliderwrap > div:first-child{
             display:block;
-        }
-        .sliderwrap .slider{
+       }
+       .sliderwrap .slider{
             position:absolute;
             top:0;
             left:0;
             width:100%;
             height:100%;
             background-position:center;
-            background-repeat:no-repeat;
             background-size:cover;
+            background-repeat:no-repeat;
+       }
+       .sliderwrap .slider img{
+            vertical-align:top;
+       }    
+       .sliderwrap .slider span{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background-color:rgba(225, 225, 225, 0.6);
+            padding:10px 20px;
+
+       }
+       .sliderwrap .slider.s1{
+        background-image:url(images/slider01.jpg);
+       }
+       .sliderwrap .slider.s2{
+        background-image:url(images/slider02.jpg);
+       }
+        .sliderwrap .slider.s3{
+        background-image:url(images/slider03.jpg);
+       } */
+        /*slider5*/
+        /* #slider{
+            overflow:hidden;
+        }
+        .sliderwrap{
+            display: flex;
+            width:400% ; 이미지 첫번쨰 복사 4장 4* 100 400%
+            height:100%;
+        }
+        .sliderwrap .slider{
+            position:relative;
+            width:100%;
+            height:100%;
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
         }
         .sliderwrap .slider img{
             vertical-align:top;
         }
         .sliderwrap .slider span{
             position:absolute;
-            top:50%;
+            top: 50%;
             left:50%;
             transform:translate(-50%,-50%);
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(225, 225, 225, 0.6);
             padding:10px 20px;
-
+        }
+        .sliderwrap .slider.s1{
+            background-image:url(images/slider01.jpg);
+        }
+        .sliderwrap .slider.s2{
+            background-image:url(images/slider02.jpg);
+        }
+        .sliderwrap .slider.s3{
+            background-image:url(images/slider03.jpg);
+        } */
+        /*slider6*/
+        #slider{
+            height:calc(100vh - 120px);
+            overflow:hidden;
+        }
+        .sliderwrap{
+            /* position:relative; */
+            width:100%;
+            height:400vh;
+        }
+        .sliderwrap .slider{
+            position:relative;
+            width:100%;
+            height:100vh;
+            background-position:center;
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+        .sliderwrap .slider img{
+            vertical-align:top;
+        }
+        .sliderwrap .slider span{
+            position:absolute;
+            top: 40%;
+            left:50%;
+            transform:translate(-40%,-50%);
+            background-color: rgba(225, 225, 225, 0.6);
+            padding:10px 20px;
         }
         .sliderwrap .slider.s1{
             background-image:url(images/slider01.jpg);
@@ -114,10 +189,6 @@
         .sliderwrap .slider.s3{
             background-image:url(images/slider03.jpg);
         }
-
-        /*slider5*/
-        /*slider6*/
-
         footer{
             display: flex;
             width:100%;
@@ -163,10 +234,10 @@
                         <span>image1</span>
                     </div>
                     <div class="slider s2">
-                        <span>image1</span>
+                        <span>image2</span>
                     </div>
                     <div class="slider s3">
-                        <span>image1</span>
+                        <span>image3</span>
                     </div>
                 </div>
             </div>
@@ -183,16 +254,50 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
     //script4
-        let currentIndex = 0;
-        
-        setInterval(function(){
-            let nextIndex = (currentIndex + 1) % 3;
-            $(".sliderwrap").eq(currentIndex).fadeOut(1200);
-            $(".sliderwrap").eq(nextIndex).fadeIn(1200);
+        // let currentIndex = 0;
+        // setInterval(function(){
+        //     let nextIndex = (currentIndex + 1)% 3
+        //     $(".slider").eq(currentIndex).fadeOut(1200);
+        //     $(".slider").eq(nextIndex).fadeIn(1200);
 
-            currentIndex = nextIndex;
-        },3000)
+        //     currentIndex = nextIndex;
+
+        // },3000)
     //script5
+            // $(()=>{
+            //     let currentIndex = 0;
+            //     $(".sliderwrap").append($(".slider").first().clone(true));
+                
+            //     setInterval(()=>{
+            //         currentIndex++;
+            //         $(".sliderwrap").animate({marginLeft:-currentIndex * 100 + "%"},600);
+
+            //         if(currentIndex == 3){
+            //             setTimeout(()=>{
+            //                 $(".sliderwrap").animate({marginLeft:0},0)
+
+            //                 currentIndex = 0;
+            //             },700)
+            //         }
+            //     },3000)
+            // })
     //script6
+    $(()=>{
+        let currentIndex = 0;
+        $(".sliderwrap").append($(".slider").first().clone(true));
+
+        setInterval(()=>{
+            currentIndex++;
+            $(".sliderwrap").animate({marginTop:-100 * currentIndex + "vh"},600)
+
+            if(currentIndex == 3){
+                setTimeout(()=>{
+                    $(".sliderwrap").animate({marginTop:0},0);
+                    
+                    currentIndex = 0 ;
+                },700)
+            }
+        },3000)
+    })
 </script>
 </html>
