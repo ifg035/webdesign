@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,li{
+            list-style:none;
+        }
+
+        /* a{
+            text-decoration:none;
+        } */
+        #wrap{
+            width:1200px;
+            margin:0 auto;
+        }
+        
+        #header {
+            display: flex;
+            width:100%;
+        }
+        #header .logo{
+            width:20%;
+            height:100px;
+            background-color: #e9e9e9;
+        }
+        #header .nav{
+            width:80%;
+            height:100PX;
+            background-color: #DDDD;
+        }
+
+        #slider{
+            width:100%;
+            height:300px;
+            background-color: #d2d2d2;
+        }
+
+        #contents{
+            display:flex;
+            width:100%;
+        }
+        #contents .content1{
+            width:33.3333%;
+            height:200px;
+            background-color: #dcdcdc;
+        }
+        
+        /*tab-menu*/
+        .tab-menu{
+            padding:20px;
+        }
+        .tab-menu .tab-btn ul{
+            display:flex;
+        }
+        .tab-menu .tab-btn li.active a{
+            
+        }
+        .tab-menu .tab-btn li a{
+            display:block;
+            padding:10px;
+            background-color: #fff;
+
+        }
+        .tab-menu .tab-cont >div{
+            padding:10px;
+            background: #ffffff;
+            line-height:1.6;
+        }
+
+        #contents .content2{
+            width:33.3333%;
+            height:200px;
+            background-color: #e5e5e5;
+        }
+        #contents .content3{
+            width:33.3333%;
+            height:200px;
+            background-color: #dcdcdc;
+        }
+
+        #footer{
+            display: flex;
+            width:100%;
+        }
+        #footer .footer1{
+            width:20%;
+            height:100px;
+            background-color: #e8e8e8;
+        }
+        #footer .footer2{
+            width:60%;
+            height:100px;
+            background-color: #b9b9b9;
+        }
+        #footer .footer3{
+            width:20%;
+            height:100px;
+            background-color: #e8e8e8;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo"></div>
+            <div class="nav"></div>
+        </div>
+        <div id="slider"></div>
+        <div id="contents">
+            <div class="content1">
+                <div class="tab-menu">
+                    <div class="tab-btn">
+                        <ul>
+                            <li class="active"><a href="#">tabmenu1</a></li>
+                            <li><a href="#">tabmenu2</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-cont">
+                        <div>tabmenu1-1<br>tabmenu1-2<br>tabmenu1-3<br>tabmenu1-4<br></div>
+                        <div>tabmenu2-1<br>tabmenu2-2<br>tabmenu2-3<br>tabmenu2-4<br></div>
+                    </div>
+                </div>
+            </div>
+            <!--/tabmenu-->
+            <div class="content2"></div>
+            <div class="content3"></div>
+        </div>
+        <div id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function(){
+    tabBtn=$(".tab-btn> ul >li");
+    tabCont=$(".tab-cont > div");
+    tabCont.hide().eq(0).show();
+
+    tabBtn.click(function(){
+        const index = $(this).index();
+
+        $(this).addClass(".active").siblings().removeClass();
+        tabCont.eq(index).show().siblings().hide();
+    });
+});
+</script>
+</html>
