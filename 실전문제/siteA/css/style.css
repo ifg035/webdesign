@@ -1,0 +1,263 @@
+@charset "utf-8";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+ul,li,dl{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+}
+
+#wrap{
+    width:1200px;
+    height:700px;
+    margin: 0 auto;
+}
+#header{
+    display: flex;
+    width:100%;
+    background-color: #ffffff;
+}
+#header .logo{
+    width:20%;
+    height:100px;
+    background-color:  #1378c1;
+}
+#header .logo h2{
+    color:#fff;
+    display:block;
+    text-align:center;
+    padding:30px;
+}
+#header .nav{
+    width:80%;
+    height: 100px;
+    background-color: #1c90e3;
+}
+/*nav*/
+.nav{}
+.nav > ul{
+    justify-content:right;
+    display:flex;
+    margin-top:60px;
+}
+.nav > ul > li{
+    position: relative;
+}
+.nav > ul > li > a{
+    color:#333;
+    display: block;
+    padding:10px 30px;
+}
+.nav > ul > li > a:hover{
+    background-color: #1378c1;
+}
+.nav > ul > li > ul{
+    position:absolute;
+    left:0;
+    width:100%;
+    text-align:center;
+    display: none;
+}
+.nav > ul > li > ul > li > a{
+    padding:10px;
+    display: block;
+}
+.nav > ul > li > ul > li > a:hover{
+    background-color: #1378c1;
+}
+/*/header*/
+#main{
+    width:100%;
+    height:500px;
+}
+#slider{
+    width:100%;
+    height:300px;
+}
+/*slider*/
+#slier .sliderwrap{
+    position:relative;
+}
+#slider .sliderwrap .slider{
+    position:absolute;
+}
+#slider .sliderwrap .slider img{
+    vertical-align:top;
+}
+#slider .sliderwrap .slider span{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    background-color:rgba(255, 255, 255, 0.6);
+    padding:10px 20px;
+}
+
+#content{
+    display: flex;
+    width:100%;
+    background-color: #fff;
+}
+#content .content1{
+    width:33.3333%;
+    height:200px;
+    background-color: #d5d5d5;
+}
+/*tab*/
+.info-menu{
+    padding:20px;
+    background-color: #fff;
+}
+.info-menu .info-btn ul{
+    display: flex;
+}
+.info-menu .info-btn li a{
+    text-decoration: underline;
+    display: block;
+    padding:10px;
+    color:#333;
+    font-size: large;
+    font-weight:bold;
+    background-color: #fff;
+}
+.info-menu .info-btn li a:hover{
+    background-color: #9e9e9e;
+}
+.info-btn .text{
+    margin-top:9px;
+}
+.info-cont{
+    position:relative;
+}
+.info-menu .info-cont > div{
+    padding:6px;
+    line-height:1.6;
+    background-color: #fff;
+}
+ .info-cont .notice > ul > li span{
+    justify-content: right;
+}
+.info-menu .info-cont .gallery{
+    display: flex;
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.info-menu .info-cont .gallery >div{
+    padding:3px;
+}
+
+#content .content2{
+    width:33.3333%;
+    height:200px;
+    background-color: #e8e8e8;
+}
+
+/*baner*/
+
+#content .banner{
+    background-image: url(../images/banner.jpg);
+    width:400px;
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-items: center;
+    flex-direction: column;
+}
+#content .banner h3{
+    margin:50px 0;
+    color:#fff;
+    align-items:center;
+}
+#content .banner a{
+    color:#333;
+    background-color:rgba(103, 103, 103, 0.278);
+    padding:10px;
+    text-align: center;
+    justify-content: center;
+}
+#content .banner a:hover{
+    background-color: #6e6e6e;
+}
+
+/*link*/
+#content .link{
+    background-image: url(../images/link.jpg);
+    width:400px;
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-items: center;
+    flex-direction: column;
+}
+#content .link h3{
+    margin:50px 0;
+    color:#fff;
+    align-items:center;
+}
+#content .link a{
+    color:#333;
+    background-color:rgba(103, 103, 103, 0.278);
+    padding:10px;
+    text-align: center;
+    justify-content: center;
+}
+#content .link a:hover{
+    background-color: #6e6e6e;
+}
+
+#content .content3{
+    width:33.3333%;
+    height:200px;
+    background-color: #fde9e9;
+}
+/*/main*/
+#footer{
+    display:flex;
+    width:100%;
+    height:100px;
+}
+#footer .footer1{
+    width:20%;
+    height:100px;
+    background-color: rgb(178, 219, 255);
+}
+#footer .footer1  h4{
+    font-size: 30px;
+    color:#787878;
+    padding:26px 43px;
+}
+#footer .footer2{
+    width:80%;
+    height:100px;
+}
+.footer2 .footer2-1{
+    width:100%;
+    height:50px;
+    text-align:center;
+    background-color: rgb(178, 219, 255);
+}
+#footer .footer2 .footer2-1 li{
+    display: inline-block;
+    margin-top:15px;
+    border-right:1px solid #333;
+}
+.footer2 .footer2-1 > ul> li{
+    display: flex;
+}
+.footer2 .footer2-2{
+    width:100%;
+    height:50px;
+    background-color: rgb(178, 219, 255);
+    text-align:center;
+    padding:10px;
+    box-sizing:border-box;
+}
+/*/footer*/
